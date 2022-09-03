@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#footer {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    background-color: white;
+    outline: 1px solid goldenrod;
+}
+#container{
+    background-color: #f1f5f9;
+    /* outline: 1px solid black; */
+    width: 97vw;
+    height: 97vh;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,fr);
+}
+#sidebar{
+    background-color: #1992d4;
+    color: white;
+
+    grid-column: 1/2;
+    grid-row: 1/4;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+#header{
+    background-color:white;
+    grid-column: 2/5;
+    grid-row: 1/2;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2,1fr);
+}
+#main{
+    background-color: #cbd5e1;
+    /* outline: 1px solid black; */
+    grid-column: 2/5;
+    grid-row: 2/4;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+#mainBox1{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1/2;
+    gap: 10px;
+}
+#mainBox1>div{
+    background-color: white;
+}
+#announcementsBox{
+    background-color: white;
+}
+#trendingBox{
+    background-color: white;
+}
+#mainBox2{
+    outline: 1px solid blue;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* gap: 5px; */
+}
+#announcementsBox{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+#trendingBox{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
