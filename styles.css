@@ -53,32 +53,26 @@ input{
 #userName{
     grid-column: span 2;
     grid-row: span 1;
-    outline:1px dashed darksalmon;
 
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    /* gap: 1rem; */
+    gap: 1rem;
+    padding-left: 2rem;
 }
 #userName img{
     width: 3rem;
     height: 3rem;
 }
-/*#userName h1{
+#userName h1{
     flex: 1 1 auto;
-    color: red;
-    outline: 1px solid lightskyblue;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: end;
-}*/
+}
 #greeting{
-    outline: 1px solid green;
     grid-column: span 3;
     grid-row: span 1;
 
     display: flex;
+    flex-wrap: wrap;
     align-content: center;
     gap: 1.5rem;
 }
@@ -90,9 +84,27 @@ input{
     align-self: flex-end;
 }
 #buttons{
-    outline: 1px solid goldenrod;
     grid-column: span 1;
     grid-row: span 1;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-content: center;
+}
+#buttons>button{
+    width: 3.5rem;
+    height: 1.5rem;
+    background-color: lightsteelblue;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+#buttons>button:hover{
+    background-color: #64748b;
+    width: 4rem;
+    height: 2rem;
+    color: lightskyblue;
 }
 #main{
     background-color: #f1f5f9;
@@ -103,6 +115,12 @@ input{
     background-color: #64748b;
     grid-column: 5/6;
     grid-row: 2/5;
+}
+#dashIcon{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-content: center;
 }
 #footer{
     background-color: #475569;
