@@ -9,8 +9,6 @@
     height: 100vh;
     background-color: #94a3b8;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
 }
 #container>*{
     padding-left: 1rem;
@@ -23,23 +21,21 @@
 
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2px;
 }
 #sideBarBox1{
     display: flex;
-    flex-wrap: wrap;
     gap: 0.5rem;
     align-content: center;
+    margin-top: 15px;
 }
 #sideBarBox2>div{
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
     align-content: center;
 }
 #sideBarBox3>div{
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
     align-content: center;
 }
@@ -49,32 +45,35 @@
     grid-row: 1/2;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
-    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 1rem;
     padding: 0.5rem;
 }
+#headerBox1{
+    display: grid;
+    padding: 3px;
+    align-items: center;
+}
+#headerBox2{
+    display: grid;
+    padding: 3px;
+    align-items: center;
+    justify-content: center;
+}
 #search{
-    grid-column: 1/3;
-    grid-row: 1/2;
-
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
     gap: 1rem;
 }
 input{
     background-color: whitesmoke;
     color: rgb(141, 163, 163);
-    width: clamp(15rem + 1vw ,10rem + 5vw,10vh);
+    width: 15rem;
     height: 1.5rem;
     border: none;
     border-radius: 5px;
 }
 #userName{
-    grid-column: 1/3;
-    grid-row: 2/3;
-
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -84,13 +83,7 @@ input{
     width: 3rem;
     height: 3rem;
 }
-#userName h3{
-    flex: 1 1 auto;
-}
 #greeting{
-    grid-column: 4/6;
-    grid-row: 1/2;
-
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -104,9 +97,6 @@ input{
     align-self: flex-end;
 }
 #buttons{
-    grid-column: 4/6;
-    grid-row: 2/3;
-
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -142,18 +132,17 @@ input{
 }
 #main{
     display: grid;
-    /* grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,1fr); */
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    /* grid-template-rows: repeat(2,1fr); */
     gap: 1rem;
     padding: 10px;
+    max-width: 100%;
 }
 .mainBox{
     background-color: #cbd5e1;
     padding: 5px;
     border-left: 5px solid #475569;
     border-radius: 10px;
+    max-width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -166,14 +155,18 @@ input{
 }
 #sideBar2{
     background-color: #f1f5f9;
-    grid-column: 3/4;
-    grid-row: 1/2;
 }
 .sideBar2Box{
     background-color: #cbd5e1;
     display: grid;
-    grid-template-columns: 1fr;
     gap: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 12px;
+}
+.sideBar2Box2{
+    margin-bottom: 15px;
 }
 #footer{
     background-color: #475569;
@@ -183,6 +176,33 @@ input{
     align-content: center;
     justify-content: center;
 }
-@media (max-width: 1400px){
+@media (max-width: 760px){
+    #header{
+        background-color: #e2e8f0;
+        grid-column: 2/6;
+        grid-row: 1/2;
+    
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+    #headerBox2{
+        display: grid;
+        padding: 3px;
+        align-items: center;
+        justify-content: start;
+    }
+    #mainGrid{
+        background-color: #f1f5f9;
+        grid-column: 2/6;
+        grid-row: 2/5;
+    
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .sideBarLinks{
+        display: none;
+    }
 
 }
