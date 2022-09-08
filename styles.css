@@ -9,8 +9,6 @@
     height: 100vh;
     background-color: #94a3b8;
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(15rem,40rem)); */
-    /* grid-template-columns: repeat(auto-fit, 30rem); */
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
 }
@@ -22,6 +20,28 @@
     background-color: #cbd5e1;
     grid-column: 1/2;
     grid-row: 1/6;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+#sideBarBox1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-content: center;
+}
+#sideBarBox2>div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-content: center;
+}
+#sideBarBox3>div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-content: center;
 }
 #header{
     background-color: #e2e8f0;
@@ -35,8 +55,8 @@
     padding: 0.5rem;
 }
 #search{
-    grid-column: span 2;
-    grid-row: span 1;
+    grid-column: 1/3;
+    grid-row: 1/2;
 
     display: flex;
     flex-wrap: nowrap;
@@ -44,32 +64,32 @@
     gap: 1rem;
 }
 input{
-    background-color: rgb(141, 163, 163);
-    width: calc(10rem + 5vw);
+    background-color: whitesmoke;
+    color: rgb(141, 163, 163);
+    width: clamp(15rem + 1vw ,10rem + 5vw,10vh);
+    height: 1.5rem;
     border: none;
     border-radius: 5px;
-    flex: 1 1 auto;
 }
 #userName{
-    grid-column: span 2;
-    grid-row: span 1;
+    grid-column: 1/3;
+    grid-row: 2/3;
 
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
-    padding-left: 2rem;
 }
 #userName img{
     width: 3rem;
     height: 3rem;
 }
-#userName h1{
+#userName h3{
     flex: 1 1 auto;
 }
 #greeting{
-    grid-column: span 3;
-    grid-row: span 1;
+    grid-column: 4/6;
+    grid-row: 1/2;
 
     display: flex;
     flex-wrap: wrap;
@@ -84,8 +104,8 @@ input{
     align-self: flex-end;
 }
 #buttons{
-    grid-column: span 1;
-    grid-row: span 1;
+    grid-column: 4/6;
+    grid-row: 2/3;
 
     display: flex;
     flex-wrap: wrap;
@@ -96,31 +116,64 @@ input{
     width: 3.5rem;
     height: 1.5rem;
     background-color: lightsteelblue;
-    color: white;
+    color: black;
+    font-weight: 700;
     border: none;
     border-radius: 20px;
 }
-#buttons>button:hover{
+#buttons button:hover{
     background-color: #64748b;
     width: 4rem;
     height: 2rem;
     color: lightskyblue;
 }
-#main{
+#mainGrid{
     background-color: #f1f5f9;
-    grid-column: 2/5;
+    grid-column: 2/6;
     grid-row: 2/5;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#main-cont{
+    background-color: #f1f5f9;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+#main{
+    display: grid;
+    /* grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr); */
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    /* grid-template-rows: repeat(2,1fr); */
+    gap: 1rem;
+    padding: 10px;
+}
+.mainBox{
+    background-color: #cbd5e1;
+    padding: 5px;
+    border-left: 5px solid #475569;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.mainBox .mainBoxMiniIcons{
+    display: flex;
+    justify-content: end;
+    top: 10px;
 }
 #sideBar2{
-    background-color: #64748b;
-    grid-column: 5/6;
-    grid-row: 2/5;
+    background-color: #f1f5f9;
+    grid-column: 3/4;
+    grid-row: 1/2;
 }
-#dashIcon{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-content: center;
+.sideBar2Box{
+    background-color: #cbd5e1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
 }
 #footer{
     background-color: #475569;
@@ -129,4 +182,7 @@ input{
     display: grid;
     align-content: center;
     justify-content: center;
+}
+@media (max-width: 1400px){
+
 }
