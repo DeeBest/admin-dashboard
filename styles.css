@@ -2,26 +2,27 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#container>*{
+    padding-left: 10px;
+    font-size: clamp(0.75rem + 0.75vw, 0.25vw + 0.50rem, 1.25vw + 1.25rem);
+    font-family: 'Open Sans', sans-serif;
 }
 #container{
     width: 100vw;
     height: 100vh;
     background-color: #94a3b8;
     display: grid;
-}
-#container>*{
-    padding-left: 1rem;
-    font-size: clamp(0.75rem + 0.75vw, 0.75vw + 0.75rem, 1.25vw + 1.25rem)
+    transition: 200ms width;
 }
 #sideBar{
-    background-color: #cbd5e1;
+    background-color: #e2e8f0;
     grid-column: 1/2;
     grid-row: 1/6;
 
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 #sideBarBox1{
     display: flex;
@@ -43,22 +44,11 @@
     background-color: #e2e8f0;
     grid-column: 2/6;
     grid-row: 1/2;
-
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 1rem;
-    padding: 0.5rem;
 }
-#headerBox1{
+#headerBox1,#headerBox2{
     display: grid;
-    padding: 3px;
-    align-items: center;
-}
-#headerBox2{
-    display: grid;
-    padding: 3px;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
 }
 #search{
     display: flex;
@@ -98,24 +88,27 @@ input{
 }
 #buttons{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 2rem;
     align-content: center;
 }
-#buttons>button{
-    width: 3.5rem;
-    height: 1.5rem;
-    background-color: lightsteelblue;
+.btn{
+    width: 90px;
+    height: 40px;
+    background-color: #f1f5f9;
     color: black;
-    font-weight: 700;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
 }
-#buttons button:hover{
+.btn:hover{
     background-color: #64748b;
-    width: 4rem;
-    height: 2rem;
-    color: lightskyblue;
+    width: 100px;
+    height: 40px;
+    color: #f1f5f9;
 }
 #mainGrid{
     background-color: #f1f5f9;
@@ -138,7 +131,7 @@ input{
     max-width: 100%;
 }
 .mainBox{
-    background-color: #cbd5e1;
+    background-color: #e2e8f0;
     padding: 5px;
     border-left: 5px solid #475569;
     border-radius: 10px;
@@ -147,17 +140,19 @@ input{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    justify-content: space-between;
 }
 .mainBox .mainBoxMiniIcons{
     display: flex;
     justify-content: end;
     top: 10px;
+    align-self: flex-end;
 }
 #sideBar2{
     background-color: #f1f5f9;
 }
 .sideBar2Box{
-    background-color: #cbd5e1;
+    background-color: #e2e8f0;
     display: grid;
     gap: 5px;
     padding: 10px;
@@ -168,24 +163,56 @@ input{
 .sideBar2Box2{
     margin-bottom: 15px;
 }
+.users{
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.users>div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.users img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
 #footer{
-    background-color: #475569;
+    background-color: #64748b;
     grid-column: 2/6;
     grid-row: 5/6;
     display: grid;
     align-content: center;
     justify-content: center;
+    padding: 10px;
 }
 @media (max-width: 760px){
+    #container>*{
+        padding-left: 10px;
+        font-size: clamp(0.75rem + 0.75vw, 0.75vw + 1.5rem, 1.25vw + 1.25rem);
+        font-family: 'Open Sans', sans-serif;
+    }
     #header{
         background-color: #e2e8f0;
         grid-column: 2/6;
         grid-row: 1/2;
+        align-content: center;
+        justify-content: center;
     
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
         padding: 0.5rem;
+    }
+    #buttons{
+        margin-top: 10px;
+    }
+    #headerBox1,#headerBox2{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: space-between;
     }
     #headerBox2{
         display: grid;
